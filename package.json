@@ -1,0 +1,20 @@
+{
+  "name": "windx-docz",
+  "version": "0.0.0",
+  "repository": "git@github.com:windx-foobar/windx-docz.git",
+  "author": "windx-foobar <bezalkogoln1ycoder@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "docz dev",
+    "build": "docz build",
+    "serve": "docz build && docz serve"
+  },
+  "dependencies": {
+    "docz": "^2.3.1",
+    "react": "16.8.0",
+    "react-dom": "16.8.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.2"
+  }
+}
