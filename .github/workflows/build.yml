@@ -1,0 +1,27 @@
+name: Build
+
+on:
+  pull_request:
+    types: [ opened, reopened ]
+
+jobs:
+  dep-and-build:
+    name: Сборка в системе ${{ matrix.os }} используя Node ${{ matrix.node }}
+
+    runs-on: ${{ matrix:os }}
+    strategy:
+      matrix:
+        node: [ '13.x', '14.x', '16.x' ]
+        os: [ ubuntu-latest, windows-latest ]
+
+    steps:
+      - name: Перейти в репо
+        uses: actions/checkout@v2
+
+      - name: Используем Node ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Установка зависимостей и сборка
+        uses: bahmutov/npm-install@v1
