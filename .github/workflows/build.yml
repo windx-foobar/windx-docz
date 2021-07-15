@@ -8,7 +8,7 @@ jobs:
   dep-and-build:
     name: Сборка в системе ${{ matrix.os }} используя Node ${{ matrix.node }}
 
-    runs-on: ${{ matrix:os }}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         node: [ '13.x', '14.x', '16.x' ]
